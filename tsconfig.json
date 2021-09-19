@@ -1,0 +1,12 @@
+{
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {
+	},
+	"files": [],
+	"references": [
+		{ "path": "./textDocument/tsconfig.json" },
+		{ "path": "./server/tsconfig.json" },
+		{ "path": "./client/tsconfig.json" },
+		{ "path": "./client-node-tests/tsconfig.json" }
+	]
+}

@@ -1,0 +1,26 @@
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '12.8.1'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+  displayName: 'Install Dependencies'
+
+- script: |
+    npm run symlink
+  displayName: 'Symlink Dependencies'
+
+- script: |
+    npm run compile
+  displayName: 'Compile'
+
+- script: |
+    npm run lint
+  displayName: 'Hygiene Checks'
+
+- script: |
+    set PATHEXT=.COM;.EXE;.BAT;.CMD;
+    npm run test
+  displayName: 'Unit Tests'
