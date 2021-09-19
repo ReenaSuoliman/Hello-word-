@@ -1,0 +1,41 @@
+{
+	"name": "vscode-lsp",
+	"description": "VSCode Language Server Protocol Implementation",
+	"version": "1.0.0",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-languageserver-node.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+	},
+	"devDependencies": {
+		"typescript": "^3.2.1",
+		"mocha": "^5.2.0",
+		"@types/node": "^8.9.3",
+		"@types/mocha": "^2.2.42",
+		"rimraf": "^2.6.2",
+		"shelljs": "^0.8.1",
+		"shx": "^0.2.2"
+	},
+	"scripts": {
+		"postinstall": "cd types && npm install && cd ../jsonrpc && npm install && cd ../protocol && npm install && cd ../server && npm install && cd ../client && npm install && cd ..",
+		"test": "cd types && npm test && cd ../jsonrpc && npm test && cd ../protocol && npm test && cd ../server && npm test && cd ../client && npm test && cd ..",
+		"clean": "cd types && npm run clean && cd ../jsonrpc && npm run clean && cd ../protocol && npm run clean && cd ../server && npm run clean && cd ../client && npm run clean && cd ..",
+		"symlink": "node ./build/bin/symlink.js",
+		"compile": "tsc -b",
+		"compile:types": "tsc -b ./types/tsconfig.json",
+		"compile:jsonrpc": "tsc -b ./jsonrpc/tsconfig.json",
+		"compile:protocol": "tsc -b ./protocol/tsconfig.json",
+		"compile:server": "tsc -b ./server/tsconfig.json",
+		"compile:client": "tsc -b ./client/tsconfig.json",
+		"watch": "tsc -b -w",
+		"watch:types": "tsc -b ./types/tsconfig.json -w",
+		"watch:jsonrpc": "tsc -b ./jsonrpc/tsconfig.json -w",
+		"watch:protocol": "tsc -b ./protocol/tsconfig.json -w",
+		"watch:server": "tsc -b ./server/tsconfig.json -w",
+		"watch:client": "tsc -b ./client/tsconfig.json -w"
+	}
+}

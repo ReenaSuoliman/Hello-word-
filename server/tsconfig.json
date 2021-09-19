@@ -1,0 +1,23 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": false,
+		"declaration": true,
+		"stripInternal": true,
+		"lib": [ "es2016" ],
+		"composite": true,
+		"outDir": "lib",
+		"rootDir": "src"
+	},
+	"include": [
+		"src"
+	],
+	"references": [
+		{
+			"path": "./node_modules/vscode-languageserver-protocol"
+		}
+	]
+}
