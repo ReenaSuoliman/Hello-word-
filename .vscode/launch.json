@@ -1,0 +1,109 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"request": "launch",
+			"type": "node",
+			"name": "test:types",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["--timeout", "999999"],
+			"cwd": "${workspaceRoot}/types",
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": { },
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/types/lib/umd/**/*.js"],
+			"preLaunchTask": "watch:types"
+		},
+		{
+			"request": "launch",
+			"type": "node",
+			"name": "test:textDocument",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["--timeout", "999999"],
+			"cwd": "${workspaceRoot}/textDocument",
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": { },
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/textDocument/lib/umd/**/*.js"],
+			"preLaunchTask": "watch:textDocument"
+		},
+		{
+			"request": "launch",
+			"type": "node",
+			"name": "test:jsonrpc",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["--timeout", "999999"],
+			"cwd": "${workspaceRoot}/jsonrpc",
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": { },
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/jsonrpc/lib/**/*.js"],
+			"preLaunchTask": "watch:jsonrpc"
+		},
+		{
+			"request": "launch",
+			"type": "node",
+			"name": "test:protocol",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["--timeout", "999999"],
+			"cwd": "${workspaceRoot}/protocol",
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": { },
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/protocol/lib/**/*.js"],
+			"preLaunchTask": "watch:protocol"
+		},
+		{
+			"request": "launch",
+			"type": "node",
+			"name": "test:server",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"stopOnEntry": false,
+			"args": ["--timeout", "999999"],
+			"cwd": "${workspaceRoot}/server",
+			"runtimeExecutable": null,
+			"runtimeArgs": [],
+			"env": { },
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/server/lib/**/*.js"],
+			"preLaunchTask": "watch:server"
+		},
+		{
+			"type": "extensionHost",
+			"request": "launch",
+			"name": "test:client",
+			"runtimeExecutable": "${execPath}",
+			"args": ["--extensionDevelopmentPath=${workspaceFolder}/client-tests", "--extensionTestsPath=${workspaceFolder}/client-tests/lib" ],
+			"stopOnEntry": false,
+			"sourceMaps": true,
+			"outFiles": ["${workspaceRoot}/client-tests/lib/test/**/*.js"],
+			"preLaunchTask": "watch:client"
+		},
+		{
+			"type": "extensionHost",
+			"request": "launch",
+			"name": "Launch TestBed Client",
+			"runtimeExecutable": "${execPath}",
+			"args": ["--extensionDevelopmentPath=${workspaceRoot}/testbed"],
+			"outFiles": ["${workspaceRoot}/testbed/client/out/**/*.js"],
+			"sourceMaps": true
+		},
+		{
+			"type": "node",
+			"request": "attach",
+			"name": "Attach to Server",
+			"port": 6012,
+			"restart": true,
+			"outFiles": ["${workspaceRoot}/testbed/server/out/**/*.js"],
+			"sourceMaps": true
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"tsBuildInfoFile":"../../lib/browser/compile.tsbuildInfo",
+		"rootDir": ".",
+		"outDir": "../../lib/browser",
+		"lib": [ "es2017", "webworker"]
+	},
+	"include": [
+		"."
+	],
+	"exclude": [
+		"test"
+	],
+	"references": [
+		{ "path": "../common/tsconfig.json" },
+		{ "path": "../../../jsonrpc/src/browser/tsconfig.json" }
+	]
+}
