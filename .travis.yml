@@ -1,0 +1,35 @@
+language: node_js
+sudo: false
+
+os:
+  - osx
+  - linux
+
+node_js:
+  - "6.10"
+
+addons:
+  apt:
+    packages:
+      - libsecret-1-dev
+
+before_install:
+  - if [ $TRAVIS_OS_NAME == "linux" ]; then
+      export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
+      sh -e /etc/init.d/xvfb start;
+      sleep 3;
+    fi
+
+install:
+  - cd protocol && mkdir node_modules && cd ..
+  - cd protocol/node_modules && ln -s ../../jsonrpc vscode-jsonrpc && cd ../..
+  - cd protocol/node_modules && ln -s ../../types vscode-languageserver-types && cd ../..
+  - cd client && mkdir node_modules && cd ..
+  - cd client/node_modules && ln -s ../../protocol vscode-languageserver-protocol && cd ../..
+  - cd server && mkdir node_modules && cd ..
+  - cd server/node_modules && ln -s ../../protocol vscode-languageserver-protocol && cd ../..
+
+script:
+  - npm install
+  - npm run compile
+  - npm run test
