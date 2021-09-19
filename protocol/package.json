@@ -1,0 +1,25 @@
+{
+  "name": "vscode-languageserver-protocol",
+  "description": "VSCode Language Server Protocol implementation",
+  "version": "3.1.2",
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-languageserver-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+  },
+  "main": "./lib/main.js",
+  "typings": "./lib/main",
+  "dependencies": {
+    "vscode-jsonrpc": "^3.3.1",
+    "vscode-languageserver-types": "^3.3.0"
+  },
+  "scripts": {
+    "prepublish": "tsc -p ./tsconfig.json",
+    "compile": "tsc -p ./tsconfig.json",
+    "watch": "tsc -w -p ./tsconfig.json"
+  }
+}
