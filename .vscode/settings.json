@@ -1,0 +1,48 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	"editor.insertSpaces": false,
+
+	"files.eol": "\n",
+	"files.trimTrailingWhitespace": true,
+
+	"typescript.tsdk": "./node_modules/typescript/lib",
+	"typescript.tsserver.trace": "off",
+	"typescript.format.insertSpaceAfterCommaDelimiter": true,
+	"typescript.format.insertSpaceAfterSemicolonInForStatements": true,
+	"typescript.format.insertSpaceBeforeAndAfterBinaryOperators": true,
+	"typescript.format.insertSpaceAfterKeywordsInControlFlowStatements": true,
+	"typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+	"typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": false,
+	"typescript.format.placeOpenBraceOnNewLineForFunctions": false,
+	"typescript.format.placeOpenBraceOnNewLineForControlBlocks": false,
+
+	"javascript.validate.enable": false,
+
+	"tslint.enable": false,
+	"eslint.enable": true,
+	"eslint.validate": [
+		"typescript"
+	],
+	"eslint.workingDirectories": [
+		"./types",
+		"./jsonrpc",
+		"./protocol",
+		"./server",
+		"./client",
+		"./client-tests"
+	],
+	"typescript.tsc.autoDetect": "off",
+	"spellright.language": [
+		"en"
+	],
+	"spellright.documentTypes": [
+		"markdown",
+		"latex",
+		"plaintext"
+	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	}
+}
