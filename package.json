@@ -1,0 +1,43 @@
+{
+	"name": "vscode-lsp",
+	"description": "VSCode Language Server Protocol Implementation",
+	"version": "1.0.0",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-languageserver-node.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.9.3",
+		"mocha": "^5.2.0",
+		"rimraf": "^2.6.2",
+		"shelljs": "^0.8.1",
+		"shx": "^0.2.2",
+		"typescript": "^3.5.1"
+	},
+	"scripts": {
+		"postinstall": "cd types && npm install && cd ../jsonrpc && npm install && cd ../protocol && npm install && cd ../server && npm install && cd ../client && npm install && cd ../client-tests && npm install && cd ..",
+		"test": "cd types && npm test && cd ../jsonrpc && npm test && cd ../protocol && npm test && cd ../server && npm test && cd ../client-tests && npm test && cd ..",
+		"clean": "cd types && npm run clean && cd ../jsonrpc && npm run clean && cd ../protocol && npm run clean && cd ../server && npm run clean && cd ../client && npm run clean && cd ../client-tests && npm run clean && cd ..",
+		"symlink": "node ./build/bin/symlink.js",
+		"symlink-tests": "node ./build/bin/symlink-tests.js",
+		"compile": "npm run compile:types && npm run compile:jsonrpc && npm run compile:protocol && npm run compile:server && npm run compile:client && npm run compile:client-tests",
+		"compile:types": "tsc -p ./types/tsconfig.json",
+		"compile:jsonrpc": "tsc -p ./jsonrpc/tsconfig.json",
+		"compile:protocol": "tsc -p ./protocol/tsconfig.json",
+		"compile:server": "tsc -p ./server/tsconfig.json",
+		"compile:client": "tsc -p ./client/tsconfig.json",
+		"compile:client-tests": "tsc -p ./client-tests/tsconfig.json",
+		"watch:types": "tsc -w -p ./types/tsconfig.json",
+		"watch:jsonrpc": "tsc -w -p ./jsonrpc/tsconfig.json",
+		"watch:protocol": "tsc -w -p ./protocol/tsconfig.json",
+		"watch:server": "tsc -w -p ./server/tsconfig.json",
+		"watch:client": "tsc -w -p ./client/tsconfig.json",
+		"watch:client-tests": "tsc -w -p ./client-tests/tsconfig.json"
+	}
+}
