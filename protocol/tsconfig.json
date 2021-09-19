@@ -1,0 +1,24 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"incremental": true,
+		"composite": true,
+		"tsBuildInfoFile":"./lib/tsconfig.tsbuildInfo",
+		"sourceMap": true,
+		"declaration": true,
+		"stripInternal": true,
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"lib": [ "es2016" ],
+		"rootDir": "src",
+		"outDir": "lib"
+	},
+	"references": [
+		{ "path": "../types/tsconfig.json" },
+		{ "path": "../jsonrpc/tsconfig.json" }
+	],
+	"include": [
+		"src"
+	]
+}
