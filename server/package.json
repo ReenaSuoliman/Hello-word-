@@ -1,0 +1,32 @@
+{
+	"name": "vscode-languageserver",
+	"description": "Language server implementation for node",
+	"version": "2.4.0",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-languageserver-node.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+	},
+	"main": "./lib/main.js",
+	"bin": {
+		"installServerIntoExtension": "./bin/installServerIntoExtension"
+	},
+	"typings": "./lib/main",
+	"devDependencies": {
+		"mocha": "^2.4.5",
+		"typescript": "^1.8.9"
+	},
+	"dependencies": {
+		"vscode-jsonrpc": "^2.2.0",
+		"vscode-languageserver-types": "^1.0.0"
+	},
+	"scripts": {
+		"prepublish": "tsc -p ./src",
+		"compile": "tsc -p ./src",
+		"watch": "tsc -w -p ./src"
+	}
+}
