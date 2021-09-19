@@ -1,0 +1,18 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"tsBuildInfoFile":"../../lib/node/compile.tsbuildInfo",
+		"rootDir": ".",
+		"outDir": "../../lib/node",
+		"types": [
+			"node"
+		]
+	},
+	"include": [
+		"."
+	],
+	"references": [
+		{ "path": "../common/tsconfig.json" },
+		{ "path": "../../../protocol/src/node/tsconfig.json" }
+	]
+}
