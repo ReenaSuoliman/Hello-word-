@@ -1,0 +1,27 @@
+{
+	"name": "vscode-languageclient-test",
+	"description": "VSCode Language client tests",
+	"version": "1.0.0",
+	"author": "Microsoft Corporation",
+	"publisher": "Microsoft Corporation",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-languageserver-node.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-languageserver-node/issues"
+	},
+	"devDependencies": {
+		"mocha": "^2.3.2",
+		"typescript": "^1.6.2",
+		"vscode": "0.10.x"
+	},
+	"scripts": {
+		"compile": "tsc -p ./src",
+		"watch": "tsc -w -p ./src"
+	}
+}
